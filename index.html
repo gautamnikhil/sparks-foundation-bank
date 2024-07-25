@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Banking System</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!-- AOS  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+</head>
+<body onload="loader()">
+
+  <!-- loader for splash screen -->
+  <div id="loading"></div>
+
+    <!-- navbar starts here  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">Sparks Bank</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">AboutUs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./customers.html">Customers</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- navbar ends here  -->
+
+    <!-- here content starts here -->
+    <div class="container-fluid hero-content">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-sm-12 text-center" data-aos="fade-up">
+          <h1>Money Transaction</h1>
+          <p class="lead muted">Easy Way To Transfer Money</p>
+          <p>Welcome To Sparks Bank</p>
+          <br>
+          <br>
+          <a class="get-started" href="./customers.html">Transfer Money</a>
+        </div>
+        <div class="col-md-6 col-sm-12 text-center" data-aos="fade-left">
+          <div class="hero-img-div">
+            <img class="money-transfer.png" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAMAAzAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAABgQFAQIDBwj/xABCEAABAwIDBQQIBAQEBgMAAAABAAIDBBEFEiEGEzFBUSJhcZEHFDJSgaGxwRUjQtFyorLhJGKDkhY2U6PC8CUzNP/EABoBAAIDAQEAAAAAAAAAAAAAAAAEAgMFAQb/xAAmEQACAgICAgEEAwEAAAAAAAAAAQIDBBESITFBEwUiMlEUYXFC/9oADAMBAAIRAxEAPwD3FCEIAEIQgAQhCABCFglAGVi6gYhitNQgCRxdIeEbNXH4Kkq8QxWsjLqa1PHf2QRnI8eSpsvhDyQlNIar9FlUeAYlJJejrDapZ1/UOqu+SnCamto7GSktmVh2gQVWY5X+qUdo9ZpTljHeuylxW2db0iR+I0m9MXrEe8BsWlyktdmHZIKUoqCnhiL5oxI4i73PGa5+KqZq+eimMlHvIWg6Ma4kH4HRKRy9vwU/NruR6KFlKmEbWMmIjrgGOPB44fFNEcjXtDmOBaeBCahZGa6LITjNdG6EIUyYIQhAAhCEACEIQAIQhAAhCEACELnNI2KMyPcGtaLkk6LmwNnvDAS4gNA1JS3iGPGeQ09DI2NvB0z/APxXKrrH4vKGNLo6I8AOMv7BQbxwVs1NO1sccurX3tpbQA8gkbcje1EXssb/ABJdNSRNvLmMpdrnJuT8VAqaueWcwxOLGA27K7Ya9kIqmb3NBG4CM34qIJQ1zn8WPvZ7RctXnvqcpx0kaX0uMJNtrs2D5Ypo37zMb6SaXaf2TnhlX63TtkLS1/Bw70kOfvSA0/lDUkttcp3w1ro8PhEl2uDQSDpbmmfoNlspSTfSL8+uMdNdMlqgxvCHVUpqnVYYIx2Q5mjQumJ188xMOGlpcw9uQ8P4QouOYh6xg0csV25zZwvqCNCFsZmRCFUn5aM+uCumq2Vc2Il7N0GCQ8HOFwFGc6OZpD2mM27JvzW1IG7pzI9HgAi+uvBYqO3CJA9r93fOW814t5drny2bn8Ojjw4lZ+HvGbeD82/FvJXmz+JVNEDmBkpmgbwdO8KLGM81O3O0F4LbuNh3K5pIGwRuuRc6noAvQ4eXKytT9nn8nGWPbqLGeCVk0TJI3BzHAEEcwuiX9lhMKeUuN6cvO505c/gr8LfhLlFMlF7WzKEIUzoIQhAAhCEACEIQAIQhAGriALnhzSriVeMUq3UsJ/w8OrgL/mH9k0yND2lpAIIsQlKspTg2Ib1rb002hPupXJ5ceiq1vRzdV7iuZSNjDi62Z37dy71z6dsZ37WyHkLX1WZp6VmaYmN726DLq655KRglHHUSmqqnxvmB7MTXX3f91nwipSSK4xcvBzwvBn1IbLWMEcXFsDdL97v2VpWYLTVQ4GNw0zR6aKyAsFlaSxq3HjJbGKt1dxYsMgo6KtMQp6ionjs4bywaO9RMVxerkbIxzmxRC4yxnV3xV/ilFLK5k9MGb9ptZxsHN6FVcmzTqyXPUvbEDxZHrf4pV0Sg+Fa0v6IXTtsfbKTCqyWaqZHRxOcDxYeQTNJg4/C5IBrK5xkeerjxVhh+GUuHxhlNGG9TzKl28lb/AA4utxl7O0p1tS9nn27kpJXCWNxLRbosPzzjdhoZHe7hwOTvTTtEWw0rZGwB0jnhok9y/MqmNNTNkZH2XVbhm7eof49xXnp/R/jm05f4aU/qmmuu/Z3wLDG1pkqJ4z6vu93FcWzcy75aLR9LXeuDDCbsIH5vMs8fkmLDKyOrpw5gyub2XM909FKIaDnsL24rfpw66qoxXoRvn88+ZrBEyCJkcYAY1tgOi636JTrccqpKqRlM9kcUZIuRclWWBYq+rc6GoA3zBe45qqr6rjzt+FDEsSyEOb8F2hCFqCwIQhAAhCEACEIQAIQgoAh4niVHhVFLW4hOyGnjHae4/LxSFiXpR2YqoZKd0NbKx2lxDb6qH6bhWVH4PSUscsoJkkMUbScxFhcgdLrzRuzuNyD8vCK4/wCgfuoS8aBrY3R7c4XCJCynqS8aRkgAAdfFZp/SPTU9RHLTUE12nWz29pLVLsttKyaOWLAatzmODsroxY266ppbDtu72Nl915W/qSU8Kqc1NrtE67HXFxiWb/TKG6NwV/dnmt9lwk9MddYFuBRtafZLp3a/yqkxHY7bLGals9ThTI3NblADw3TzJXSf0fbY1tPT09RT0+6p25YwZGiw8QE5tkB+2I9IdJtLV+oVNOaOuIvG3NmbLbUgHqBrZPIXh2D7E41s1j+C4niHq7YG10Uf5ct3Xddv3PmvcQpJ7AysLKFIDjUwMnhfFI0OY8WISxKw4fJI2oBe5rSY3Hi8dx6ppqJGxRPlkNmMaXOPcF4dtB6Tq/Ea7LQwUzMOY8FrZGEvkb1zcrjoNEvfVzRXZHaPQoKiojrM8QjbMWZnRg6EdHd/emSir4a6MhhLZALOjdoQkfZfaGhxSmz0xa2Yizw83cD/AJlav3kdNvJ3tbUgndPj0N+QScJyrfFroqjJwfZHrqd9DUyxuZ2C64N8t/ip2zNLK6rNSQRGL6kaOPd3JSxj0j41h8rmRYNHUQQiz6ibMzMeZFuA+qhwemHES6xwCnkAF/y6l2g62yFL0fSaq7vmT686NWWbKdfDR7KheVYb6ZIJKhjMRwh9PC7jLFNvMviCAvUKaojqoI54HB8UjQ5j2nQgrbT2JnVCELoAhCEACEIQAIQhAC5jBDNsdnieL2VTP5Gn7K/sLpd2jOTajZZ/WoqGecDj9lwqcQq2sqIxO4PbWjKee7vqFVOWmRckhpBRcWvoqnGQ98scYkexu5kf2HW7QGihYnUStbQ1IkcG+rPMgHAghuvwvdRctA5aGMloF3EWWM4sDcW4KjryZMLw4mMy3kjuzNbNcWU2tpjLhZiibuntaHsbyY4G4+YXGw5FVt1IG4XRyAg7vFqK9uV52A/VNASTtSD/AME+tSe26qpah3j6xGfonUcbqyt7RLybIQhWAVG10m62YxV44ilk/pK8wh9DtTLSxSMxuIZow6xpTpcfxL0nbk22SxXvp3Dz0UuOvghIpHEh8dMJTp+kaKuegPLYvRJjdJM2ajx2lZK32XiN7SFbV2ye2UtNHFFiGGMkHtyxF7S8W0FiCB8E/sxKndQMrQXCF7QW9k3N+AtxugYlS+rCpL8sZdlu4EWde1iDwUGot7ItRfZ5VVbDbczU8kElfRzRvFnDeAXH+1V1J6PNssNdI6jiphvGFjrTNNwfFe1+twmOSQyAMiJDz0I4rFPWQVEbpIZQ9jeJ6KWzvR4DJ6Ntq4wScNabDg2dp+69h9GzJGbG4ayYkvY1zTc3tYkWV86ojfGcrwSWFwAOpHXwVTsH2tlMOk/6kZf5uJXYM6MCEIVgAhCEACEIQAIQsFAC5tYLYrszJ7uJkecMgRV0VK6pndI6fMGvLi1mgDrfstNsZY2zYFd4zsxaDT+LM37qxxEH/ElrTmdSuse/VVTOSRzxB0FRDvZTPC6I5DlHaAcOHksyiju6CRj7U0QZYcC1wtp15LSSKTfPgLd8HPBLnaaZSFwfT1Lo97uXGZoY1w97Utd48AVAgdnZJaOCk9WeGXZuryZbgAkajgez8wuomkgglAhbu4Gm5fKSTpfouJilllaxkcrIg5rntBsGO55T0t8FvNSkvq2inlcZW2bJmFvZt1+yhJkuyn23OXYrFYt01jaaNjgGG4sHtd9k4jXXqlDbalMWxW0gaC2N2HyPF3X1DCT9E2Urs9PE7qxp+Stq8EjqhCFcAu7fuy7KVg98xs/3SNH3XHFoJTiB3cLy2Rrad5HJjhdx+ABW3pFDnbM5Ge0+to2+dRHdWVdvBUkslkbaJz7A6XFraW8VVYiE1tEN9o8EoHSNLGxvic+/6ADe56WXGSJtXhmQg5KmreWk8wS6x+6ksqJX08kcNQ5zzkYyR7dWvPHT5rJxCZzo3dkNfA1wHuvKr6OPRFge5+zdY+UZXudKHg8jmIKt6El9I0SyxzaWLmDS3TiVBM8+5cXSRgGQsexzQN3rp46ea3il3MkscUsDWtaHhrWgF9xfkhvQR6ZwwuPc0ldNIczmZ4mHoxl7D5lbbBsMexuCtPH1Rn0RVTvbheIbxrBlpHS3YLWJa648dPmpWy8Yi2cwtg4NpY/6Qp0k14LVCEK46CEIQAIQhAAsFZUHFKr1amJae27RoUZSUVtkoxcnpCbtjIN/h7wRaPGKI3/12g/VPtgeK832s0wpknuVtI/ynjXpCVokpRbL8mHGSRyfMwOI7Vx0BKxv28g7yUerp3zF7QJGjPmDmkC+gUX8LN73qPDOLeXJWN6K1GPssDO2/sP14acVsyUOflyuGl9VBhw3dStezeAg85L8vBS4mPEmaS2jcosb81UEkvRXbVCOrwLEMPzhslXSyRN52LmkD6rWgxXcwU8MsejI2sc8HmBa651r4xVTesENIOmbmO5V8YdNLu6ZudxOl+AVLunF6Q3Xj1uG2ODHBwDmm4IuFuo1DEYKWKFzszmMAJUlaUd67M9+Rc24Gagw+P38UpR/3AfsripphK97i46xGO1uqqNq7TSYTG3XdYjFNKPdY0O1Pxsrxr2vZmYQ4ciCq5STejvF6IktA2SYPc94AIJDdDoLcR4lcXYYTEWNlNw5paeNgHE28jZbT1j6dsZc57t4L9ll7LT8St7TrHjrH/dQ2kdVWzLqCV80bpnxuyANvbV4Bvr3/wB1tJTSmSoDWMySjsuJ1b2QOC5/i0YIvLqdReMi9/ipgmksHfluaSBcEqtvYfFopsdpxQbOYw9jGNj9SebNFu0GEE/RXWDs3eFUTPdgYP5Qqrbd1tj8YI4mle3zCu6QZKeJvRjR8ldV4I60dkIQrgBCEIAEIQgDB4JbxmUy1haPZZ2UxuNmlKEzzJO9x5uJSeZLUNDmFHc2/wBFNtZb/h+qcf0GN/lI0/ZejtNxdecbW/8ALGKO92me7yF16JTuzQRu6sB+SrxfxZ3N/NHQrVZKwrZvbFECwsrBUAF7EXSVDnkhhibewtyUIOMZLh2S3gp2IwGDM1tQ0BxuGZLu+qjURgZI01THS68b6D4JSS3M1K3qrpbGTD5HTUkUkgs9zASpK1jLS1pZ7JGiytePhGVLyxdxyHdVQeXi0xOUOPMDgFGpqmWmdeN2nNp4FdNpmCfaXZmIgujbPUPktwH5DgL/ABK0raV1LLl4sPsuCzsiDjLlFmhjzjOPCZcUUtPUMtGXtcOLMx+Sk+rtd+p478xSxG98bw9hylvAhXtBiTZrMmIbJ8iuwv5LTK7seUO4+CT6qD+t9u+x+yyIDp+Y6172IH7LtfzWVaK7ZW4/BHUYXPDO3PFIAHN66jRcsBne58kb3lwABAK7428MoDm/U9oHjdVFBUGmqmv/AE8Cq/kcLF+hqqvnS/2NSytGODgC3gRdbrREgQhCABCEIA5VBywSHo0pRvcprrdKSX+EpTHJZ2c+0aOD7K7aVmfZzFW9aOYfyFO2Dv3mEUMnv08bvNoSjirC/C61gF81NIPNpV1s5i2Hs2awrfV9IwiihuHzNBHYHeuYr+1kc38kX6FVP2mwFnt41hrfGqZ+6jS7abMxe1juH37pgfortMSL5aPJym3EJdft/so2/wD83TH+EOP0C4HbnAcQlZR4biDZaqU2YwMcL242uONlxppHYrbSN6idmR2+/wDvJ1uDdc6KnkxFl6UB8RJaZQ4ZQQbEeK61LY7Ne03eTzNyrHZsNFNK1jWtj3pIy6anUpeuCnZqRoWTddX2ltBGImNjHBrQAtpb5DlNjbRbIIWolpaMzfsTpM4lIlvnub3Ot11ZUvyGOTtxnkeIXTGjJLtVSYfA1uWWhmneeeZj4w3+pyjPa5jsjxlcNCCsm2E65GtVOFq/sCLHjdY5g9EBCXfkZ11plvhuJcIqo68GvPNW4N+GoSjw71OocRdTDJLd0fLqEzXdrpiN+L/1ANtZnRYbSFo1fX07LdbuCgnvUvaGSLEo6ARONoKtlQ4EccoOnnZRDrfvXL2nrRPEjKKe0X+BzukgLHm5YbfBWYS/gUhbVlnJzUwBaGPLlWhLJjxsZlCEK8oBCwhAHOoZvIXs6tISiQQSDyNk4ngUp1VhUyge8UhmrpMewX20R5hniezm5pA8l4A6k9Ve6CWERyxHI8FtiCNF9BKkxrZrB8SlNVW0g31rGSNxYXdL20Pil6LlDexjJodutHjPLRXGC1GFw08jcQia6bPcF0ebs2T9S7B4TUSAQ0Esh6mV9vO6ZsM9G2zscRdWYbHM88GukeQ35p2u1T8Iz7aHX5aPJ6jEMGMD2xUrc7mkAthtY+KXGktcCDlcDcWPAr6OGwGyQtfZ+gdb34s31XZmxWyjRps1g/xooz9Qr+Oyk+fHY/jMoEP4lVOLjZrWu1J6aar3f0a4RUYNsrTwVoc2ole6Z7XHVubgD32V3R4JhNA4OocLoqYgWBgp2Mt5BT7BEYKPZJyk+mwWShYPBTInnO3W1DNlts6OqlpX1Idhrow1rg0jNIDfX+Fa4VtrDtVI9sODVUG741D3syg9ONytPS/srXYwKXFcLiM8tOwxzQg9osvcFvWxvp3qr9Hr5IcLNFNSzU80T3XEsbm5rm4Oo1/slMrajsYxo8pjbzQgEEaIWWbIIQhBwLIshCAJWGOy10XebJnZwSpQ/wD7IP4wmxvBaWE/sMvNX3mUIQnRMj1dTHR00tRUPDIomFz3HgAEl7PekrD8UqJKetZ6nKXu3Bc67ZG3OW55Ota4PwVL6XNpbubgNI8+/VOaf9rPufgvL/FM108o7Yrbc1LSPo8VcpcXB4ykcOICr6mkfmMjHF9zcg8V5ZsrtvVYRlpq8PqqLTQn8yMf5Tz8D5r1nC8TosVpGVeH1DJYXD9J1aehHIpfIxlJdluNkygytIINiCPFRKp5e4MHLl1TDUUzJmlw7EnU8Cq/BsOkdiZM7bCLtEcieSyLMWcZpejbry4Sg5e0MGF0gpKGKLTNa7j1PNTBosDgtlqRiorRlSk5Pf7BCEKRwEIQgAQhCANXdUs4vUb6uey3ZiNh4pnPEJex+iLJPXYxduglaPqlcpScOhnFcVYuRXIWA4O1BuCsrKNcEIQg6CEIQcJGHsz1kQHJ101BLuDt3c4kkFmWsEwgi2a+i1cSLjDsycualZpGyFhZCaFT5eqZ5aqolqah+eaV5e9/Un/36LkhC1F0ZIKdhGLVuDVgqsOmMTx7Q5PHQjmoKFxrZ1PR7NsrttQ44WU1RlpMQOgjc7syfwHr3FOVGHZrg9m2q+ZvHlqvUPRhtZitZXMwaqYauEMLt+49qMD3jz+qVtp12hqq3b0z1ULZajgtksNghCEACEIQAIQhAGCtXtzgtI0IsVuhGgFXEKB1BIXsaXUxPG3sf2UVpBHZII7k5OAPEAqunwaklJLWmNx9w2SFuI29xH6szS1MX0K4dgIPsVLx4tBUN2GTw1AZJlMR13g4+Fku8axehhZdT9kaGF0zy1gNxzKsqejjiAcbPf15LtExsbcrB2fmUsbV7bUGBZ6eBwqq61t2w9mM/wCc/ZPVY0a+5eTPuybLXxh4LvEa6noYDPWStiiGgvzPQDme5IuPbXVeIsdS0jnQUnAe88d5+yRMTx2vxTEBW19QZHNNw3g1g6NHJWrXZmhw4EXCLrHrSO00KL5S7Z6vsDj34nh3qtS7/FU4DTc6vZyd9j8OqbAV4XguJS4TiMVZDrkNnt95p4he2UNXFW0cVTA7NHK0OaVOme12RuhxfR//2Q==" alt="img-showing-money-transfer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- here content ends here -->
+
+
+
+
+    <!-- footer starts here -->
+    <div class="footer" style="margin-top: 25px;">
+   <div class="container" id="Foodie">
+
+<h1 style="color:orangered;font-family: Lucida Handwriting; margin-top: 55px;font-size: 30px;font-weight: 500;  box-shadow:2px 6px 18px rgba(66,57,238,0.3);
+" ><b>Sparks Bank</b></h1>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <p style="color: rgb(209, 21, 21);font-size: 17px;margin-top: 30px;">Sparks Bank is the place<br>
+            where customers feel the sense of safety<br>
+            for their property. And also,In the bank,<br>
+            where customers can send the money<br>
+            in easy way..!Transaction of money is main<br>
+            part where customer takes shelter of the bank.<br>
+
+        </p>        
+      </div>
+      <div class="col-sm-6">
+              <h3 style="color: rgb(32, 27, 27);color: red;">My Adress</h3>
+              <p style="color: rgb(24, 23, 23);font-size: 17px;">
+                Saharanpur ,Uttar Pradesh<br>
+                247001
+              </p>
+        <p style="color: rgb(36, 34, 34);font-size: 17px;">Email: gautamnikhilsre@gmail.com</p>
+          <a href="file:///C:/Users/lenovo/Documents/Basic%20Bank%20Management%20System/aboutus.html" class="btn btn-danger btn-lg">About Sparks Bank</a>
+
+         <h3 style="color: rgb(29, 28, 28);color: red">Follow Me</h3><br>
+         <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-google"></a>
+<a href="https://www.linkedin.com/in/nikhil-gautam-8b4669241/" class="fa fa-linkedin"></a>
+<a href="#" class="fa fa-instagram"></a>
+
+      </div>
+      
+    </div>
+
+    
+  </div>
+  
+</div>
+    <!-- footer ends here -->
+
+    <!-- spalsh screen js -->
+    <script>
+      var preloader = document.getElementById("loading");
+      function loader(){
+        preloader.style.display = 'none';
+      }
+    </script>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <!-- aos data  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+      });
+    </script>
+    
+</body>
+</html>
